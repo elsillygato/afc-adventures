@@ -117,3 +117,30 @@ a:visited {
     background-color:#6577e6;
     color:white; 
 }
+
+.characterbox {
+    border:none;
+    margin:auto;
+    width:75%;
+    .character {
+        display:inline-block;
+        vertical-align:middle;
+        padding:8px;
+        text-align:left;
+        width:20%;
+        margin:8px;
+        img {
+            float:left;
+            width:128px;
+            padding:4px;
+            margin:0px;
+        }
+        h1 {
+            font-size:24px;
+        }
+        p {
+            font-size:15px;
+            text-align:center;
+        }
+    }
+}
