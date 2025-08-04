@@ -25,6 +25,13 @@ div h1 {
 div p {
   font-family: StoneHinge;
 }
+div img {
+  display: block;
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: none;
+}
 
 .countdown {
   background-color: #B17457;
@@ -193,4 +200,14 @@ a:visited {
   font-size: 50px;
   color: #ffffff;
   text-shadow: 0 0 16px #330000, 0 0 16px #330000, 0 0 16px #330000;
+}
+
+.gallery {
+  border: none;
+}
+.gallery img {
+  display: inline-block;
+  border: 8px dotted;
+  min-width: 20%;
+  max-width: 20%;
 }/*# sourceMappingURL=default.css.map */
