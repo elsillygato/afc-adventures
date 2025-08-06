@@ -156,6 +156,14 @@ a:visited {
   justify-content: center;
   border-style: double;
   border-width: 8px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+.song details, .song summary {
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-family: Dinopia;
+  text-align: center;
 }
 .song h2 {
   font-family: Dinopia;
@@ -187,6 +195,10 @@ a:visited {
   font-size: 35px;
   color: #330000;
   text-shadow: 0 0 4px #110000;
+}
+
+.possiblespoiler {
+  filter: blur(8px);
 }
 
 .afcantics {

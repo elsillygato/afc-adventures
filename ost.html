@@ -3,6 +3,12 @@
     <head>
         <link rel="stylesheet" href="default.css">
         <title>Welcome to the Adventure!</title>
+        <script>
+            function spoiler() {
+                var element = document.getElementById("possiblespoiler");
+                element.classList.remove("possiblespoiler");
+            } 
+        </script>
     </head>
     <body>
         <div class="navbar">
@@ -25,6 +31,7 @@
                 <h2>A Long Forgotten Time (Adventure is Calling II)</h2>
                 <div class="audio" align="center"><audio controls><source src="songs/adventureiscallingii.mp3" type="audio/mpeg"></audio></div>
             </div>
+            <h1>Vs. Sonic.EXE (AFC2025 Mix)</h1>
             <div class="song alittletrolling">
                 <img src="ostimgs/alittletrollingfunkipedia.png">
                 <h2>A Little Trolling</h2>
@@ -39,6 +46,16 @@
                 <img src="ostimgs/afcanticsfunkipedia.png">
                 <h2>AFC ANTICS (Remastered)</h2>
                 <div class="audio" align="center"><audio controls><source src="songs/afcanticsremastered.mp3" type="audio/mpeg"></audio></div>
+            </div>
+            <h1>Joke Songs/Mixes</h1>
+            <div class="song alittletrolling">
+                <img id="possiblespoiler" class="possiblespoiler" onclick="spoiler()" src="ostimgs/alittletrollingkadever.png">
+                <h2>A Little Trolling (Kade Engine Version)</h2>
+                <div class="audio" align="center"><audio controls><source src="songs/toomustard.mp3" type="audio/mpeg"></audio></div>
+                <details>
+                    <summary>Spoilers Ahead!</summary>
+                    References Genius Like Phineas by Wutae and Not Like Us and tv off by Kendrick Lamar.
+                </details> 
             </div>
         </div>
     </body>
