@@ -197,10 +197,13 @@ a:visited {
         border:none;
     }
 }
-.alittletrolling {
+#alittletrolling {
     border-color: #fa837a;
 }
-.justaprankbro {
+#feinius {
+    border-color: #fa837a;
+}
+#justaprankbro {
     border-color: #b51010;
     h2 {
         font-size:35px;
@@ -211,8 +214,8 @@ a:visited {
 .possiblespoiler {
     filter: blur(8px);
 }
-.afcantics {
-    width:75%;
+#afcantics {
+    max-width:75%;
     border-color: #540808;
     img {
         width:75%;

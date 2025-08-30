@@ -194,14 +194,18 @@ a:visited {
   border: none;
 }
 
-.alittletrolling {
+#alittletrolling {
   border-color: #fa837a;
 }
 
-.justaprankbro {
+#feinius {
+  border-color: #fa837a;
+}
+
+#justaprankbro {
   border-color: #b51010;
 }
-.justaprankbro h2 {
+#justaprankbro h2 {
   font-size: 35px;
   color: #330000;
   text-shadow: 0 0 4px #110000;
@@ -211,14 +215,14 @@ a:visited {
   filter: blur(8px);
 }
 
-.afcantics {
-  width: 75%;
+#afcantics {
+  max-width: 75%;
   border-color: #540808;
 }
-.afcantics img {
+#afcantics img {
   width: 75%;
 }
-.afcantics h2 {
+#afcantics h2 {
   font-size: 50px;
   color: #ffffff;
   text-shadow: 0 0 16px #330000, 0 0 16px #330000, 0 0 16px #330000;
