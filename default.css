@@ -10,22 +10,22 @@ body {
   background-color: #D8D2C2;
 }
 
-div {
+main {
   background-color: #FAF7F0;
   border: 4px solid #4A4947;
   max-width: 80%;
   margin: auto;
   padding: 8px;
 }
-div h1 {
+main h1 {
   text-align: center;
   font-family: Dinopia;
   font-size: 48px;
 }
-div p {
+main p {
   font-family: StoneHinge;
 }
-div img {
+main img {
   display: block;
   max-width: 25%;
   margin-left: auto;
@@ -36,12 +36,14 @@ div img {
 .countdown {
   background-color: #B17457;
   color: white;
+  font-family: Dinopia;
   border: 8px #4A4947 solid;
   margin-left: 20%;
   margin-right: 20%;
 }
 .countdown h1 {
   font-size: 64px;
+  text-align: center;
 }
 .countdown p {
   font-size: 32px;
@@ -49,7 +51,7 @@ div img {
   text-align: center;
 }
 
-.header {
+header {
   color: white;
   padding: 64px;
   padding-top: 128px;
@@ -61,28 +63,33 @@ div img {
   background-blend-mode: overlay;
   background-position: center;
   background-repeat: no-repeat;
+  border: 8px solid #4A4947;
 }
-.header h1 {
+header h1 {
+  text-align: center;
+  font-family: Dinopia;
   font-size: 96px;
 }
 
-.navbar {
+nav {
   max-width: 100%;
+  background-color: #f2da96;
+  border: 4px solid #4A4947;
 }
-.navbar li {
+nav li {
   display: inline-block;
   padding-right: 8px;
   padding-left: 8px;
   border-right: black solid 2px;
   font-family: Dinopia;
 }
-.navbar li .selected {
+nav li .selected {
   color: white;
 }
-.navbar li:first-child {
+nav li:first-child {
   padding-left: 0px;
 }
-.navbar li:last-child {
+nav li:last-child {
   border-right: 0px;
 }
 
@@ -127,7 +134,7 @@ a:visited {
 .characterbox {
   border: none;
   margin: auto;
-  width: 75%;
+  width: 100%;
 }
 .characterbox .character {
   display: inline-block;
@@ -136,10 +143,11 @@ a:visited {
   text-align: left;
   width: 20%;
   margin: 8px;
+  border: 6px double #4A4947;
 }
 .characterbox .character img {
   float: left;
-  width: 128px;
+  max-width: 128px;
   padding: 4px;
   margin: 0px;
 }
@@ -152,7 +160,9 @@ a:visited {
 }
 
 .song {
-  width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
   justify-content: center;
   border-style: double;
   border-width: 8px;

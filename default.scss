@@ -1,4 +1,5 @@
 $brown:#B17457;
+$tan: #f2da96;
 $beigewhite:#D8D2C2;
 $white:#FAF7F0;
 $black:#4A4947;
@@ -13,7 +14,7 @@ $black:#4A4947;
 body {
     background-color:$beigewhite;
 }
-div {
+main {
     background-color:$white;
     border:4px solid $black;
     max-width:80%;
@@ -38,8 +39,10 @@ div {
 .countdown {
     background-color:$brown;
     color:white;
+    font-family:Dinopia;
     h1 {
         font-size:64px;
+        text-align:center;
     }
     p {
         font-size:32px;
@@ -50,7 +53,7 @@ div {
     margin-left:20%;
     margin-right:20%;
 }
-.header {
+header {
     color:white;
     padding:64px;
     padding-top:128px;
@@ -62,13 +65,18 @@ div {
     background-blend-mode: overlay;
     background-position:center;
     background-repeat: no-repeat;
+    border: 8px solid $black;
     h1 {
+        text-align: center;
+        font-family: Dinopia;
         font-size:96px;
     }
 }
 
-.navbar {
+nav {
     max-width:100%;
+    background-color:$tan;
+    border:4px solid $black;
     li {
         display:inline-block;
         padding-right:8px;
@@ -130,7 +138,7 @@ a:visited {
 .characterbox {
     border:none;
     margin:auto;
-    width:75%;
+    width:100%;
     .character {
         display:inline-block;
         vertical-align:middle;
@@ -138,9 +146,10 @@ a:visited {
         text-align:left;
         width:20%;
         margin:8px;
+        border:6px double $black;
         img {
             float:left;
-            width:128px;
+            max-width:128px;
             padding:4px;
             margin:0px;
         }
@@ -155,7 +164,9 @@ a:visited {
 }
 
 .song {
-    width:25%;
+    margin-left:auto;
+    margin-right:auto;
+    max-width:50%;
     justify-content:center;
     border-style:double;
     border-width:8px;
