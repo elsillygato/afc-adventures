@@ -12,7 +12,7 @@ body {
 
 main {
   background-color: #FAF7F0;
-  border: 4px solid #4A4947;
+  border: 8px solid #4A4947;
   max-width: 80%;
   margin: auto;
   padding: 8px;
@@ -37,6 +37,7 @@ main img {
   background-color: #B17457;
   color: white;
   font-family: Dinopia;
+  margin: 16px auto;
   border: 8px #4A4947 solid;
   margin-left: 20%;
   margin-right: 20%;
@@ -57,7 +58,7 @@ header {
   padding-top: 128px;
   padding-bottom: 128px;
   border-width: 8px;
-  margin: auto;
+  margin: 16px auto;
   width: 784px;
   background: #B17457 url(afcadventuresch2.png);
   background-blend-mode: overlay;
@@ -72,9 +73,10 @@ header h1 {
 }
 
 nav {
-  max-width: 100%;
+  max-width: 95%;
   background-color: #f2da96;
   border: 4px solid #4A4947;
+  margin: 16px auto;
 }
 nav li {
   display: inline-block;
