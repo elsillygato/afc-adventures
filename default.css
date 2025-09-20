@@ -180,6 +180,7 @@ a:visited {
 .song h2 {
   font-family: Dinopia;
   text-align: center;
+  font-size: 40px;
 }
 .song img {
   max-width: 50%;
@@ -195,8 +196,14 @@ a:visited {
   width: auto;
   border: none;
 }
+.song p {
+  text-align: center;
+}
+.song .songinfo {
+  font-size: 20px;
+}
 
-#alittletrolling {
+#alittletrolling, #alittletrollingold1, #alittletrollingold2 {
   border-color: #fa837a;
 }
 
@@ -204,11 +211,11 @@ a:visited {
   border-color: #fa837a;
 }
 
-#justaprankbro {
+#justaprankbro, #justaprankbroold {
   border-color: #b51010;
 }
-#justaprankbro h2 {
-  font-size: 35px;
+#justaprankbro h2, #justaprankbroold h2 {
+  font-size: 50px;
   color: #330000;
   text-shadow: 0 0 4px #110000;
 }
@@ -225,7 +232,7 @@ a:visited {
   width: 75%;
 }
 #afcantics h2 {
-  font-size: 50px;
+  font-size: 60px;
   color: #ffffff;
   text-shadow: 0 0 16px #330000, 0 0 16px #330000, 0 0 16px #330000;
 }
