@@ -1,248 +1,37 @@
 @font-face {
-  font-family: Dinopia;
-  src: url(DinopiaRegular-mLrO9.otf);
+  font-family: "The Bomb Sound";
+  src: url(The\ Bomb\ Sound.ttf);
 }
-@font-face {
-  font-family: StoneHinge;
-  src: url(StoneHinge-aa8m.ttf);
-}
-body {
-  background-color: #D8D2C2;
-}
-
-main {
-  background-color: #FAF7F0;
-  border: 8px solid #4A4947;
-  max-width: 80%;
-  margin: auto;
-  padding: 8px;
-}
-main h1 {
+p, h1, h2 {
+  font-family: "The Bomb Sound";
   text-align: center;
-  font-family: Dinopia;
-  font-size: 48px;
-}
-main p {
-  font-family: StoneHinge;
-}
-main img {
-  display: block;
-  max-width: 25%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: none;
-}
-
-.countdown {
-  background-color: #B17457;
   color: white;
-  font-family: Dinopia;
-  margin: 16px auto;
-  border: 8px #4A4947 solid;
-  margin-left: 20%;
-  margin-right: 20%;
 }
-.countdown h1 {
-  font-size: 64px;
-  text-align: center;
+
+img {
+  display: block;
+  margin: auto;
 }
-.countdown p {
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
+
+html {
+  background: #000842;
+  background: linear-gradient(180deg, rgb(0, 8, 66) 0%, rgb(0, 0, 28) 100%);
 }
 
 header {
-  color: white;
-  padding: 64px;
-  padding-top: 128px;
-  padding-bottom: 128px;
-  border-width: 8px;
-  margin: 16px auto;
-  width: 784px;
-  background: #B17457 url(afcadventuresch2.png);
-  background-blend-mode: overlay;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 8px solid #4A4947;
-}
-header h1 {
-  text-align: center;
-  font-family: Dinopia;
-  font-size: 96px;
-}
-
-nav {
-  max-width: 95%;
-  background-color: #f2da96;
-  border: 4px solid #4A4947;
-  margin: 16px auto;
-}
-nav li {
-  display: inline-block;
-  padding-right: 8px;
-  padding-left: 8px;
-  border-right: black solid 2px;
-  font-family: Dinopia;
-}
-nav li .selected {
-  color: white;
-}
-nav li:first-child {
-  padding-left: 0px;
-}
-nav li:last-child {
-  border-right: 0px;
-}
-
-a button {
-  width: 256px;
-  height: 256px;
-  display: inline;
-  padding: 32px;
-  font-family: StoneHinge;
-  font-size: 32px;
-  border-radius: 16px;
-  position: relative;
-}
-a button img {
-  width: 50%;
-}
-
-a:visited {
-  text-decoration: none;
-}
-
-.youtube {
-  background-color: #e62117;
-  color: white;
-}
-
-.twitter {
-  background-color: #26a7de;
-  color: white;
-}
-
-.bsky {
-  background-color: #1185fe;
-  color: white;
-}
-
-.discord {
-  background-color: #6577e6;
-  color: white;
-}
-
-.characterbox {
-  border: none;
-  margin: auto;
-  width: 100%;
-}
-.characterbox .character {
-  display: inline-block;
-  vertical-align: middle;
-  padding: 8px;
-  text-align: left;
-  width: 20%;
-  margin: 8px;
-  border: 6px double #4A4947;
-}
-.characterbox .character img {
-  float: left;
-  max-width: 128px;
-  padding: 4px;
-  margin: 0px;
-}
-.characterbox .character h1 {
-  font-size: 24px;
-}
-.characterbox .character p {
-  font-size: 15px;
-  text-align: center;
-}
-
-.song {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 50%;
-  justify-content: center;
-  border-style: double;
-  border-width: 8px;
-  margin-bottom: 16px;
-  margin-top: 16px;
-}
-.song details, .song summary {
-  font-size: 16px;
-  margin-bottom: 8px;
-  font-family: Dinopia;
-  text-align: center;
-}
-.song h2 {
-  font-family: Dinopia;
-  text-align: center;
-  font-size: 40px;
-}
-.song img {
-  max-width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: none;
-  display: block;
-}
-.song .audio {
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: none;
+  height: 128px;
   width: auto;
-  border: none;
-}
-.song p {
-  text-align: center;
-}
-.song .songinfo {
-  font-size: 20px;
+  background-image: url(stars.png);
+  background-repeat: repeat-x;
+  background-size: 1000px;
 }
 
-#alittletrolling, #alittletrollingold1, #alittletrollingold2 {
-  border-color: #fa837a;
-}
-
-#feinius {
-  border-color: #fa837a;
-}
-
-#justaprankbro, #justaprankbroold {
-  border-color: #b51010;
-}
-#justaprankbro h2, #justaprankbroold h2 {
-  font-size: 50px;
-  color: #330000;
-  text-shadow: 0 0 4px #110000;
-}
-
-.possiblespoiler {
-  filter: blur(8px);
-}
-
-#afcantics {
-  max-width: 75%;
-  border-color: #540808;
-}
-#afcantics img {
-  width: 75%;
-}
-#afcantics h2 {
-  font-size: 60px;
-  color: #ffffff;
-  text-shadow: 0 0 16px #330000, 0 0 16px #330000, 0 0 16px #330000;
-}
-
-.gallery {
-  border: none;
-}
-.gallery img {
-  display: inline-block;
-  border: 8px dotted;
-  min-width: 20%;
-  max-width: 20%;
+footer {
+  position: relative;
+  top: 60px;
+  height: 256px;
+  margin: auto;
+  background-image: url(dunes.png);
+  background-repeat: repeat-x;
+  background-size: 1024px;
 }/*# sourceMappingURL=default.css.map */

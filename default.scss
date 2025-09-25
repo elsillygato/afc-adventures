@@ -1,246 +1,38 @@
-$brown:#B17457;
-$tan: #f2da96;
-$beigewhite:#D8D2C2;
-$white:#FAF7F0;
-$black:#4A4947;
 @font-face {
-    font-family: Dinopia;
-    src: url(DinopiaRegular-mLrO9.otf);
+  font-family: "The Bomb Sound"; 
+  src: url(The\ Bomb\ Sound.ttf); 
 }
-@font-face {
-    font-family: StoneHinge;
-    src: url(StoneHinge-aa8m.ttf);
-}
-body {
-    background-color:$beigewhite;
-}
-main {
-    background-color:$white;
-    border:8px solid $black;
-    max-width:80%;
-    h1 {
-        text-align:center;
-        font-family:Dinopia;
-        font-size:48px;
-    }
-    p {
-        font-family:StoneHinge;
-    }
-    img {
-        display:block;
-        max-width:25%;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top:none;
-    }
-    margin:auto;
-    padding:8px;
-}
-.countdown {
-    background-color:$brown;
+
+p, h1, h2 {
+    font-family: "The Bomb Sound";
+    text-align:center;
     color:white;
-    font-family:Dinopia;
-    margin:16px auto;
-    h1 {
-        font-size:64px;
-        text-align:center;
-    }
-    p {
-        font-size:32px;
-        font-weight:bold;
-        text-align:center;
-    }
-    border:8px $black solid;
-    margin-left:20%;
-    margin-right:20%;
 }
+
+img {
+    display:block;
+    margin:auto;
+}
+
+html {
+    background: #000842;
+    background: linear-gradient(180deg, rgba(0, 8, 66, 1) 0%, rgba(0, 0, 28, 1) 100%);
+}
+
 header {
-    color:white;
-    padding:64px;
-    padding-top:128px;
-    padding-bottom:128px;
-    border-width:8px;
-    margin:16px auto;
-    width:784px;
-    background:$brown url(afcadventuresch2.png);
-    background-blend-mode: overlay;
-    background-position:center;
-    background-repeat: no-repeat;
-    border: 8px solid $black;
-    h1 {
-        text-align: center;
-        font-family: Dinopia;
-        font-size:96px;
-    }
+    height:128px;
+    width:auto;
+    background-image:url(stars.png);
+    background-repeat:repeat-x;
+    background-size:1000px;
 }
 
-nav {
-    max-width:95%;
-    background-color:$tan;
-    border:4px solid $black;
-    margin:16px auto;
-    li {
-        display:inline-block;
-        padding-right:8px;
-        padding-left:8px;
-        border-right: black solid 2px;
-        font-family:Dinopia;
-        .selected {
-            color:#ffff;
-        }
-    }
-    li:first-child {
-        padding-left:0px;
-    }
-    li:last-child {
-        border-right:0px;
-    }
-}
-
-a {
-    button {
-        width:256px;
-        height:256px;
-        display:inline;
-        padding:32px;
-        font-family:StoneHinge;
-        font-size:32px;
-        border-radius:16px;
-        position:relative;
-        img {
-            width:50%;
-        }
-    }
-}
-
-a:visited {
-    text-decoration:none;
-}
-
-.youtube {
-    background-color:#e62117;
-    color:white;
-}
-
-.twitter {
-    background-color:#26a7de;
-    color:white;
-}
-
-.bsky {
-    background-color:#1185fe;
-    color:white;
-}
-
-.discord {
-    background-color:#6577e6;
-    color:white; 
-}
-
-.characterbox {
-    border:none;
+footer {
+    position:relative;
+    top:60px;
+    height:256px;
     margin:auto;
-    width:100%;
-    .character {
-        display:inline-block;
-        vertical-align:middle;
-        padding:8px;
-        text-align:left;
-        width:20%;
-        margin:8px;
-        border:6px double $black;
-        img {
-            float:left;
-            max-width:128px;
-            padding:4px;
-            margin:0px;
-        }
-        h1 {
-            font-size:24px;
-        }
-        p {
-            font-size:15px;
-            text-align:center;
-        }
-    }
-}
-
-.song {
-    margin-left:auto;
-    margin-right:auto;
-    max-width:50%;
-    justify-content:center;
-    border-style:double;
-    border-width:8px;
-    margin-bottom:16px;
-    margin-top:16px;
-    details, summary {
-        font-size:16px;
-        margin-bottom:8px;
-        font-family:Dinopia;
-        text-align:center;
-    }
-    h2 {
-        font-family: Dinopia;
-        text-align:center;
-        font-size:40px;
-    }
-    img {
-        max-width:50%;
-        margin-left:auto;
-        margin-right:auto;
-        margin-top:none;
-        display:block;
-    }
-    .audio{
-        margin-left:auto;
-        margin-right:auto;
-        margin-top:none;
-        width:auto;
-        border:none;
-    }
-    p {
-        text-align:center;
-    }
-    .songinfo {
-        font-size:20px;
-    }
-}
-#alittletrolling, #alittletrollingold1, #alittletrollingold2 {
-    border-color: #fa837a;
-}
-#feinius {
-    border-color: #fa837a;
-}
-#justaprankbro, #justaprankbroold {
-    border-color: #b51010;
-    h2 {
-        font-size:50px;
-        color:#330000;
-        text-shadow: 0 0 4px #110000;
-    }
-}
-.possiblespoiler {
-    filter: blur(8px);
-}
-#afcantics {
-    max-width:75%;
-    border-color: #540808;
-    img {
-        width:75%;
-    }
-    h2 {
-        font-size:60px;
-        color:#ffffff;
-        text-shadow: 0 0 16px #330000, 0 0 16px #330000, 0 0 16px #330000;
-    }
-}
-.gallery {
-    border:none;
-    img {
-        display:inline-block;
-        border:8px dotted;
-        min-width:20%;
-        max-width:20%;
-    }
+    background-image:url(dunes.png);
+    background-repeat:repeat-x;
+    background-size:1024px;
 }
