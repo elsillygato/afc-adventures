@@ -2,36 +2,83 @@
   font-family: "The Bomb Sound";
   src: url(The\ Bomb\ Sound.ttf);
 }
-p, h1, h2 {
-  font-family: "The Bomb Sound";
-  text-align: center;
-  color: white;
+@keyframes infiniteScroll {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
-
-img {
-  display: block;
-  margin: auto;
-}
-
 html {
-  background: #000842;
-  background: linear-gradient(180deg, rgb(0, 8, 66) 0%, rgb(0, 0, 28) 100%);
+  background-color: #0a0908;
 }
 
-header {
-  height: 128px;
-  width: auto;
-  background-image: url(stars.png);
+nav {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(training.png);
   background-repeat: repeat-x;
-  background-size: 1000px;
+  background-size: contain;
+  animation: infiniteScroll 60s linear infinite;
+  border: 6px #f2f4f3 solid;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 20px;
+}
+nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: "The Bomb Sound", sans-serif;
+}
+nav ul li {
+  font-size: 24px;
+  margin: 0 20px;
+  list-style: none;
+  color: #f2f4f3;
+}
+nav ul li img {
+  height: 80px;
 }
 
-footer {
-  position: relative;
-  top: 60px;
-  height: 256px;
-  margin: auto;
-  background-image: url(dunes.png);
-  background-repeat: repeat-x;
-  background-size: 1024px;
+li.selected {
+  color: #36558f;
+  text-decoration: underline;
+}
+
+.intro {
+  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(ascadventures3.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 6px #f2f4f3 solid;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  max-height: 1000px;
+  min-height: 500px;
+  margin: 20px auto;
+}
+.intro h1 {
+  font-family: "The Bomb Sound", sans-serif;
+  font-size: 96px;
+  color: #f2f4f3;
+  text-align: center;
+  padding: 20px;
+}
+
+article {
+  border: 6px #f2f4f3 solid;
+  border-radius: 3px;
+  font-family: "The Bomb Sound", sans-serif;
+  color: #f2f4f3;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+article h2 {
+  font-size: 36px;
+  margin-top: 20px;
 }/*# sourceMappingURL=default.css.map */
