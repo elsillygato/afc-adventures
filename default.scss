@@ -31,6 +31,7 @@ nav {
     border-radius: 3px;
     padding: 10px;
     margin: 20px;
+    height:100px;
     ul {
         display: flex;
         flex-direction: row;
@@ -44,6 +45,10 @@ nav {
             color: $white-smoke;
             img {
                 height: 80px;
+                transition: height 0.1s ease;
+                &:hover {
+                    height: 90px;
+                }
             }
         }
     }
