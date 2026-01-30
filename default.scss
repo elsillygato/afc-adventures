@@ -1,4 +1,5 @@
 $black: #0a0908ff;
+$black-transparent: #0a090888;
 $dusk-blue: #36558fff;
 $white-smoke: #f2f4f3ff;
 $classic-crimson: #d62839ff;
@@ -6,10 +7,25 @@ $rosewood: #ba324fff;
 
 @font-face {
   font-family: "The Bomb Sound"; 
-  src: url(The\ Bomb\ Sound.ttf); 
+  src: url(The\ Bomb\ Sound.ttf);
 }
 
-@keyframes infiniteScroll {
+@font-face {
+    font-family: Bulletproof;
+    src: url(Bulletproof-w1nxx.ttf);
+}
+
+@font-face {
+    font-family: Radja;
+    src: url(Radja-q2MP5.ttf);
+}
+
+@font-face {
+    font-family: DS-DIGI;
+    src: url(DS-DIGI.ttf);
+}
+
+@keyframes scroll-x {
     0% {
         background-position: 100% 0;
     }
@@ -18,15 +34,23 @@ $rosewood: #ba324fff;
     }
 }
 
+@keyframes scroll-xy {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
 html {
     background-color: $black;
 }
 
-nav {
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(training.png);
+#navbar {
     background-repeat: repeat-x;
     background-size: contain;
-    animation: infiniteScroll 60s linear infinite;
+    animation: scroll-x 60s linear infinite;
     border: 6px $white-smoke solid;
     border-radius: 3px;
     padding: 10px;
@@ -48,6 +72,13 @@ nav {
                 transition: height 0.1s ease;
                 &:hover {
                     height: 90px;
+                }
+            }
+            a {
+                text-decoration: none;
+                color: $white-smoke;
+                &:hover {
+                    color: $dusk-blue;
                 }
             }
         }
@@ -74,24 +105,63 @@ li.selected {
     min-height:500px;
     margin: 20px auto;
     h1 {
-        font-family: "The Bomb Sound", sans-serif;
-        font-size: 96px;
+        font-family: Bulletproof, sans-serif;
+        font-size: 6em;
         color: $white-smoke;
         text-align: center;
         padding: 20px;
     }
 }
 
-article {
+article{
     border: 6px $white-smoke solid;
     border-radius: 3px;
-    font-family: "The Bomb Sound", sans-serif;
+    font-family: Radja, sans-serif;
     color: $white-smoke;
-    max-width: 900px;
+    max-width: 90%;
     margin: 20px auto;
     padding: 20px;
     h2 {
         font-size: 36px;
         margin-top: 20px;
+        font-family: Bulletproof, sans-serif;
+    }
+}
+
+#countdown {
+    border: 6px $white-smoke solid;
+    border-radius: 3px;
+    font-family: DS-DIGI, sans-serif;
+    color: $white-smoke;
+    max-width: 70%;
+    margin: 20px auto;
+    padding: 20px;
+    h2 {
+        font-size: 36px;
+        margin-top: 20px;
+        font-family: Bulletproof, sans-serif;
+        text-align: center;
+    }
+    #timer {
+        font-size: 4rem;
+        text-align: center;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width:75%;
+        margin: 0 auto;
+        p {
+            margin:0
+        }
+    }
+    #labels {
+        font-family: Radja, sans-serif;
+        font-size: 2rem;
+        text-align: center;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
+        max-width:75%;
+        margin: 0 auto;
     }
 }

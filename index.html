@@ -5,19 +5,68 @@
         <title>ASC Adventures: HEAD-ON</title>
     </head>
     <body>
-        <nav>
+        <nav id="navbar">
             <ul>
                 <li class="selected"><img src="ascadventures3cropped.png"></li>
+                <li><a href="about.html">About ASC Adventures</a></li>
             </ul>
         </nav>
         <main>
             <div class="intro">
                 <h1>Welcome!</h1>
             </div>
+            <div id="countdown">
+                <h2>Time left until ASC2026:</h2>
+                <div id="timer">
+                    <p id="days">D</p>
+                    <p id="hours">H</p>
+                    <p id="minutes">M</p>
+                    <p id="seconds">S</p>
+                </div>
+                <div id="labels">
+                    <p>Days</p>
+                    <p>Hours</p>
+                    <p>Minutes</p>
+                    <p>Seconds</p>
+                </div>
+            </div>
             <article>
                 <h2>Welcome to ASC Adventures!</h2>
                 <p>Currently, this website is under construction. Please check back soon for updates!</p>
             </article>
         </main>
+        <script src="navbar.js"></script>
+        <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Sep 19, 2026 10:00:00").getTime();
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+
+                    // Get today's date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the element with id="timer"
+                    document.getElementById("days").innerHTML = days;
+                    document.getElementById("hours").innerHTML = hours;
+                    document.getElementById("minutes").innerHTML = minutes;
+                    document.getElementById("seconds").innerHTML = seconds;
+
+                    // If the count down is finished, write some text
+                    if (distance < 0) {
+                        clearInterval(x);
+                        document.getElementById("timer").innerHTML = "EXPIRED";
+                    }
+                    }, 1000);
+        </script>
     </body>
 </html>

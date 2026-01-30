@@ -2,7 +2,19 @@
   font-family: "The Bomb Sound";
   src: url(The\ Bomb\ Sound.ttf);
 }
-@keyframes infiniteScroll {
+@font-face {
+  font-family: Bulletproof;
+  src: url(Bulletproof-w1nxx.ttf);
+}
+@font-face {
+  font-family: Radja;
+  src: url(Radja-q2MP5.ttf);
+}
+@font-face {
+  font-family: DS-DIGI;
+  src: url(DS-DIGI.ttf);
+}
+@keyframes scroll-x {
   0% {
     background-position: 100% 0;
   }
@@ -10,40 +22,54 @@
     background-position: 0 0;
   }
 }
+@keyframes scroll-xy {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
 html {
   background-color: #0a0908;
 }
 
-nav {
-  background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(training.png);
+#navbar {
   background-repeat: repeat-x;
   background-size: contain;
-  animation: infiniteScroll 60s linear infinite;
+  animation: scroll-x 60s linear infinite;
   border: 6px #f2f4f3 solid;
   border-radius: 3px;
   padding: 10px;
   margin: 20px;
   height: 100px;
 }
-nav ul {
+#navbar ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   font-family: "The Bomb Sound", sans-serif;
 }
-nav ul li {
+#navbar ul li {
   font-size: 24px;
   margin: 0 20px;
   list-style: none;
   color: #f2f4f3;
 }
-nav ul li img {
+#navbar ul li img {
   height: 80px;
   transition: height 0.1s ease;
 }
-nav ul li img:hover {
+#navbar ul li img:hover {
   height: 90px;
+}
+#navbar ul li a {
+  text-decoration: none;
+  color: #f2f4f3;
+}
+#navbar ul li a:hover {
+  color: #36558f;
 }
 
 li.selected {
@@ -67,8 +93,8 @@ li.selected {
   margin: 20px auto;
 }
 .intro h1 {
-  font-family: "The Bomb Sound", sans-serif;
-  font-size: 96px;
+  font-family: Bulletproof, sans-serif;
+  font-size: 6em;
   color: #f2f4f3;
   text-align: center;
   padding: 20px;
@@ -77,13 +103,52 @@ li.selected {
 article {
   border: 6px #f2f4f3 solid;
   border-radius: 3px;
-  font-family: "The Bomb Sound", sans-serif;
+  font-family: Radja, sans-serif;
   color: #f2f4f3;
-  max-width: 900px;
+  max-width: 90%;
   margin: 20px auto;
   padding: 20px;
 }
 article h2 {
   font-size: 36px;
   margin-top: 20px;
+  font-family: Bulletproof, sans-serif;
+}
+
+#countdown {
+  border: 6px #f2f4f3 solid;
+  border-radius: 3px;
+  font-family: DS-DIGI, sans-serif;
+  color: #f2f4f3;
+  max-width: 70%;
+  margin: 20px auto;
+  padding: 20px;
+}
+#countdown h2 {
+  font-size: 36px;
+  margin-top: 20px;
+  font-family: Bulletproof, sans-serif;
+  text-align: center;
+}
+#countdown #timer {
+  font-size: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 75%;
+  margin: 0 auto;
+}
+#countdown #timer p {
+  margin: 0;
+}
+#countdown #labels {
+  font-family: Radja, sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 75%;
+  margin: 0 auto;
 }/*# sourceMappingURL=default.css.map */
