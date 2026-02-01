@@ -170,3 +170,31 @@ article{
         }           
     }
 }
+
+#mute-button {
+    position:fixed;
+    bottom:0;
+    right:0;
+    border: 3px $white-smoke solid;
+    background-color: $black;
+    color: $white-smoke;
+    font-family: Radja, sans-serif;
+    padding:20px;
+    font-size: 1.5em;
+}
+
+#volume-container {
+    position:fixed;
+    bottom: 100px;
+    right:0;
+    border: 3px $white-smoke solid;
+    background-color: $black;
+    color: $white-smoke;
+    font-family: Radja, sans-serif;
+    padding:20px;
+    font-size: 1.5em;
+    p {
+        margin-top:10px;
+        margin-bottom:20px;
+    }
+}
