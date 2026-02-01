@@ -7,22 +7,22 @@ $rosewood: #ba324fff;
 
 @font-face {
   font-family: "The Bomb Sound"; 
-  src: url(The\ Bomb\ Sound.ttf);
+  src: url(fonts/The\ Bomb\ Sound.ttf);
 }
 
 @font-face {
     font-family: Bulletproof;
-    src: url(Bulletproof-w1nxx.ttf);
+    src: url(fonts/Bulletproof-w1nxx.ttf);
 }
 
 @font-face {
     font-family: Radja;
-    src: url(Radja-q2MP5.ttf);
+    src: url(fonts/Radja-q2MP5.ttf);
 }
 
 @font-face {
-    font-family: DS-DIGI;
-    src: url(DS-DIGI.ttf);
+    font-family: "Digital 7";
+    src: url(fonts/digital-7.ttf);
 }
 
 @keyframes scroll-x {
@@ -128,40 +128,45 @@ article{
     }
 }
 
-#countdown {
+#countdowncontainer {
     border: 6px $white-smoke solid;
     border-radius: 3px;
-    font-family: DS-DIGI, sans-serif;
     color: $white-smoke;
     max-width: 70%;
-    margin: 20px auto;
+    margin: auto;
     padding: 20px;
     h2 {
         font-size: 36px;
         margin-top: 20px;
+        text-align: center;
         font-family: Bulletproof, sans-serif;
-        text-align: center;
     }
-    #timer {
-        font-size: 4rem;
-        text-align: center;
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-        max-width:75%;
-        margin: 0 auto;
-        p {
-            margin:0
+    #countdown {
+        display:grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto;
+        h2 {
+            font-size: 36px;
+            margin-top: 20px;
+            font-family: Bulletproof, sans-serif;
+            text-align: center;
         }
-    }
-    #labels {
-        font-family: Radja, sans-serif;
-        font-size: 2rem;
-        text-align: center;
-        display:flex;
-        justify-content: space-around;
-        align-items: center;
-        max-width:75%;
-        margin: 0 auto;
+        .cdnumbers {
+            font-size: 4rem;
+            text-align: center;
+            max-width:75%;
+            margin: 10px auto;
+            font-family: "Digital 7", sans-serif;
+            p {
+                margin:0
+            }
+        }
+        .cdlabels {
+            font-family: Radja, sans-serif;
+            font-size: 2rem;
+            text-align: center;
+            max-width:75%;
+            margin: 0 auto;
+        }           
     }
 }

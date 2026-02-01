@@ -15,19 +15,17 @@
             <div class="intro">
                 <h1>Welcome!</h1>
             </div>
-            <div id="countdown">
-                <h2>Time left until ASC2026:</h2>
-                <div id="timer">
-                    <p id="days">D</p>
-                    <p id="hours">H</p>
-                    <p id="minutes">M</p>
-                    <p id="seconds">S</p>
-                </div>
-                <div id="labels">
-                    <p>Days</p>
-                    <p>Hours</p>
-                    <p>Minutes</p>
-                    <p>Seconds</p>
+            <div id="countdowncontainer">
+                <h2>Countdown to ASC2026</h2>
+                <div id="countdown">
+                    <p id="days" class="cdnumbers">D</p>
+                    <p id="hours" class="cdnumbers">H</p>
+                    <p id="minutes" class="cdnumbers">M</p>
+                    <p id="seconds" class="cdnumbers">S</p>
+                    <p class="cdlabels">Days</p>
+                    <p class="cdlabels">Hours</p>
+                    <p class="cdlabels">Minutes</p>
+                    <p class="cdlabels">Seconds</p>
                 </div>
             </div>
             <article>
@@ -64,7 +62,10 @@
                     // If the count down is finished, write some text
                     if (distance < 0) {
                         clearInterval(x);
-                        document.getElementById("timer").innerHTML = "EXPIRED";
+                        document.getElementById("days").innerHTML = "TIME'S";
+                        document.getElementById("hours").innerHTML = "";
+                        document.getElementById("minutes").innerHTML = "";
+                        document.getElementById("seconds").innerHTML = "UP";
                     }
                     }, 1000);
         </script>
