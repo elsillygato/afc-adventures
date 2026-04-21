@@ -20,13 +20,17 @@ bgm.loop = true
 let muted = true
 let playing = false
 let currentTrackIndex = 0
+let hidden = false
 
+
+const musicContainer = document.createElement("div")
 const playButton = document.createElement("button")
 const volumeContainer = document.createElement("div")
 const volumeSlider = document.createElement("input")
 const trackSelector = document.createElement("div")
 const nextButton = document.createElement("button")
 const previousButton = document.createElement("button")
+const hideButton = document.createElement("button")
 
 function handleTrackChange(step) {
     if (step >= 0) {
@@ -57,7 +61,7 @@ function createPlayButton() {
             volumeSlider.value = 25
         }
     })
-    document.body.appendChild(playButton)
+    musicContainer.appendChild(playButton)
 }
 
 function createVolumeSlider() {
@@ -77,7 +81,7 @@ function createVolumeSlider() {
     }
 
     volumeContainer.appendChild(volumeSlider)
-    document.body.appendChild(volumeContainer)
+    musicContainer.appendChild(volumeContainer)
 }
 
 function createTrackSelector() {
@@ -88,6 +92,7 @@ function createTrackSelector() {
     trackName.innerHTML = trackList[currentTrackIndex].name
 
     previousButton.innerText = "<"
+    previousButton.classList.add('musicbutton')
     previousButton.onclick = () => {
         handleTrackChange(-1)
         trackName.innerHTML = trackList[currentTrackIndex].name
@@ -98,6 +103,7 @@ function createTrackSelector() {
     }
 
     nextButton.innerText = ">"
+    nextButton.classList.add('musicbutton')
     nextButton.onclick = () => {
         handleTrackChange(1)
         trackName.innerHTML = trackList[currentTrackIndex].name
@@ -111,9 +117,36 @@ function createTrackSelector() {
     trackSelector.appendChild(trackName)
     trackSelector.appendChild(previousButton)
     trackSelector.appendChild(nextButton)
-    document.body.appendChild(trackSelector)
+    musicContainer.appendChild(trackSelector)
+    
 }
 
+function createHideButton() {
+    hideButton.id = "hide-button"
+    hideButton.classList.add('musicbutton')
+    hideButton.innerText = hidden ? "↑" : "↓"
+    hideButton.onclick = () => {
+        hidden = !hidden
+        hideButton.innerText = hidden ? "↑" : "↓"
+        console.log(hidden)
+        if (hidden) {
+            volumeContainer.style.display = "none"
+            trackSelector.style.display = "none"
+            playButton.style.display = "none"
+        } else {
+            volumeContainer.style.display = "block"
+            trackSelector.style.display = "block"
+            playButton.style.display = "block"
+        }
+    }
+    musicContainer.appendChild(hideButton)
+
+}
+
+createHideButton()
 createPlayButton()
 createVolumeSlider()
 createTrackSelector()
+
+musicContainer.id = "music-container"
+document.body.append(musicContainer)

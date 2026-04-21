@@ -7,6 +7,15 @@ $rosewood: #ba324fff;
 
 $phone-max-width: 900px;
 
+@mixin default-box {
+    border: 3px $white-smoke solid;
+    background-color: $black;
+    color: $white-smoke;
+    font-family: Radja, sans-serif;
+    padding:20px;
+    font-size: 1em;
+}
+
 @font-face {
   font-family: "The Bomb Sound"; 
   src: url(fonts/The\ Bomb\ Sound.ttf);
@@ -58,6 +67,8 @@ html {
     padding: 10px;
     margin: 20px;
     height:100px;
+    overflow-x: auto;
+    white-space: nowrap;
     ul {
         display: flex;
         flex-direction: row;
@@ -70,10 +81,10 @@ html {
             list-style: none;
             color: $white-smoke;
             img {
-                height: 80px;
-                transition: height 0.1s ease;
+                max-height: 80px;
+                transition: max-height 0.1s ease;
                 &:hover {
-                    height: 90px;
+                    max-height: 90px;
                 }
             }
             a {
@@ -175,13 +186,13 @@ article{
 
 #characterselect {
     display:flex;
-    height: 1000px;   
+    height: 25%;   
 }
 
 #characterarea {
     display: flex;
     align-items: center;
-    flex: 1 1 50%;
+    flex: 2 1 25%;
     img {
         width:100%;
         height:auto;
@@ -199,20 +210,11 @@ article{
     }
 }
 
-@media screen and (max-width: 1000px){
-    #characterarea {
-        flex-direction: column;
-        article {
-            font-size: 2vw;
-        }
-    }
-}
-
 #charactericons {
-    flex: 1 1 50%;
+    flex: 1 1 25%;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows:100px;
+    grid-auto-rows:10%;
     row-gap: 10%;
 }
 
@@ -229,27 +231,18 @@ article{
 }
 
 #mute-button {
-    position:fixed;
-    bottom:0;
-    right:0;
-    border: 3px $white-smoke solid;
-    background-color: $black;
-    color: $white-smoke;
-    font-family: Radja, sans-serif;
-    padding:20px;
-    font-size: 1.5em;
+    @include default-box;
+    font-size: 1.5vw;
+}
+
+#hide-button {
+    @include default-box;
+    font-size: 1.5vw;
 }
 
 #volume-container {
-    position:fixed;
-    bottom: 100px;
-    right:0;
-    border: 3px $white-smoke solid;
-    background-color: $black;
-    color: $white-smoke;
-    font-family: Radja, sans-serif;
-    padding:20px;
-    font-size: 1.5em;
+    @include default-box;
+    font-size: 1.5vw;
     p {
         margin-top:10px;
         margin-bottom:20px;
@@ -257,24 +250,86 @@ article{
 }
 
 #track-selector {
-    position:fixed;
-    bottom:250px;
-    right:0;
-    border: 3px $white-smoke solid;
-    background-color: $black;
-    color: $white-smoke;
-    font-family: Radja, sans-serif;
-    padding:20px;
-    font-size: 1em;
-    text-align: center;
+    @include default-box;
+    font-size: 1vw;
     button {
-        border: 3px $white-smoke solid;
-        background-color: $black;
-        color: $white-smoke;
-        font-family: Radja, sans-serif;
-        padding:2px;
-        margin: 0 4px;
-        font-size: 1em;
+        @include default-box;
         text-align: center;
+    }
+}
+
+#music-container {
+    position: fixed;
+    bottom:0;
+    right:0;
+}
+
+@media screen and (max-width: 768px){
+    .intro {
+        max-width: 90%;
+        h1 {
+            font-size: 10vw;
+        }
+    }
+    #navbar {
+        padding:0;
+        ul li  {
+            margin:0 20px;
+            img {
+                max-height: 40px;
+                &:hover {
+                    max-height: 50px;
+                }
+            }
+        }
+    }
+    #countdowncontainer {
+        #countdown {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto;
+        .cdlabels {
+            font-size: 3vw;
+        }
+        .cdnumbers {
+            font-size: 10vw;
+        }
+    }
+    }
+    #characterarea {
+        flex-direction: column;
+        article {
+            font-size: 2vw;
+        }
+    }
+    #charactericons {
+        grid-template-columns: 1fr 1fr;
+        row-gap: 5%;
+        .charimg {
+            border-width:4px;
+        }
+    }
+    #music-container {
+        display:flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        width:100%;
+        height: auto;
+    }
+    #volume-container {
+        padding:0 10px;
+        font-size:4vw;
+    }
+
+    #track-selector {
+        font-size: 2.5vw;
+        padding: 4px;
+    }
+    #mute-button {
+        font-size: 4vw;
+        padding: 4px;
+    }
+    #hide-button {
+        font-size: 4vw;
+        padding: 20px;
     }
 }
