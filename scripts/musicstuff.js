@@ -15,12 +15,13 @@ const trackList = [
 
 
 const bgm = new Audio('audio/charselect.mp3')
-bgm.volume = 0.25
-bgm.loop = true
-let muted = true
-let playing = false
-let currentTrackIndex = 0
-let hidden = false
+bgm.preload = "auto";
+bgm.volume = 0.25;
+bgm.loop = true;
+let muted = true;
+let playing = false;
+let currentTrackIndex = 0;
+let hidden = false;
 
 
 const musicContainer = document.createElement("div")
