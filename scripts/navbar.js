@@ -5,4 +5,3 @@ console.log(`Selected background: ${backgrounds[randomIndex]}`);
 navbar.style.background = `linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), ${backgrounds[randomIndex]}`;
 navbar.style.backgroundRepeat = 'repeat-x';
 navbar.style.backgroundSize = 'contain';
-navbar.style.animation = 'scroll-x 60s linear infinite';

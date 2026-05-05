@@ -274,6 +274,7 @@ article h2 {
   }
   #navbar {
     padding: 0;
+    animation: scroll-x 30s linear infinite;
   }
   #navbar ul li {
     margin: 0 20px;

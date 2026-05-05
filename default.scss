@@ -273,6 +273,7 @@ article{
     }
     #navbar {
         padding:0;
+        animation: scroll-x 30s linear infinite;
         ul li  {
             margin:0 20px;
             img {
