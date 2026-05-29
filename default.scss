@@ -186,7 +186,13 @@ article{
 
 #characterselect {
     display:flex;
-    height: 25%;   
+    height: 25%;
+    img {
+        filter: drop-shadow(0 0 0.25rem #ffffff);
+    }
+    #lordgato {
+        filter: drop-shadow(0 0 0.25rem #0055ff);
+    }
 }
 
 #characterarea {

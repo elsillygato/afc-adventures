@@ -10,6 +10,10 @@ const trackList = [
     {
         name: "Tensweeper Version",
         source:"tensweeper"
+    },
+    {
+        name: "Elevensweeper Version",
+        source:"elevensweeper"
     }
 ]
 

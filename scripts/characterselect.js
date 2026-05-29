@@ -18,6 +18,30 @@ const charinfo ={
     destrobo: {
         name: "Destrobo",
         description: "Basic Arm Hero"
+    },
+    lordgato: {
+        name: "Lord Gato",
+        description: "The hero of our story! A hat-wearing Yarida who's willing to fight for his friends and his worth."
+    },
+    cherry: {
+        name: "Cherry",
+        description: "Friend to Lord Gato! A talon-wielding ant Robopon who's always ready to fight for their friends."
+    },
+    clueless: {
+        name: "Clueless",
+        description: "PLACEHOLDER TEXT"
+    },
+    podsfi: {
+        name: "Podsfi",
+        description: "PLACEHOLDER TEXT"
+    },
+    spinny: {
+        name: "Spinny",
+        description: "PLACEHOLDER TEXT"
+    },
+    elaine: {
+        name: "Elaine",
+        description: "PLACEHOLDER TEXT"
     }
 };
 
