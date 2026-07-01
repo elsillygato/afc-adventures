@@ -71,7 +71,7 @@ html {
   color: #f2f4f3;
 }
 #navbar ul li a:hover {
-  color: #36558f;
+  color: #d62839;
 }
 
 li.selected {
@@ -169,6 +169,27 @@ article h2 {
 }
 #characterselect #lordgato {
   filter: drop-shadow(0 0 0.25rem #0055ff);
+}
+#characterselect #cherry {
+  filter: drop-shadow(0 0 0.25rem #606265);
+}
+#characterselect #podsfi {
+  filter: drop-shadow(0 0 0.25rem #A3A13D);
+}
+#characterselect #clueless {
+  filter: drop-shadow(0 0 0.25rem #E28029);
+}
+#characterselect #spinny {
+  filter: drop-shadow(0 0 0.25rem #8FAEC6);
+}
+#characterselect #elaine {
+  filter: drop-shadow(0 0 0.25rem #BE251A);
+}
+#characterselect #camel {
+  filter: drop-shadow(0 0 0.25rem #A4A491);
+}
+#characterselect #feesh {
+  filter: drop-shadow(0 0 0.25rem #fff);
 }
 
 #characterarea {

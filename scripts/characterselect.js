@@ -42,6 +42,14 @@ const charinfo ={
     elaine: {
         name: "Elaine",
         description: "PLACEHOLDER TEXT"
+    },
+    camel: {
+        name: "Camel",
+        description: "PLACEHOLDER TEXT"
+    },
+    feesh: {
+        name: "Feesh",
+        description: "PLACEHOLDER TEXT"
     }
 };
 

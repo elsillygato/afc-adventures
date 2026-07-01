@@ -91,7 +91,7 @@ html {
                 text-decoration: none;
                 color: $white-smoke;
                 &:hover {
-                    color: $dusk-blue;
+                    color: $classic-crimson;
                 }
             }
         }
@@ -192,6 +192,27 @@ article{
     }
     #lordgato {
         filter: drop-shadow(0 0 0.25rem #0055ff);
+    }
+    #cherry {
+        filter: drop-shadow(0 0 0.25rem #606265);
+    }
+    #podsfi {
+        filter: drop-shadow(0 0 0.25rem #A3A13D);
+    }
+    #clueless {
+        filter: drop-shadow(0 0 0.25rem #E28029);
+    }
+    #spinny {
+        filter: drop-shadow(0 0 0.25rem #8FAEC6);
+    }
+    #elaine {
+        filter: drop-shadow(0 0 0.25rem #BE251A);
+    }
+    #camel {
+        filter: drop-shadow(0 0 0.25rem #A4A491);
+    }
+    #feesh {
+        filter: drop-shadow(0 0 0.25rem #fff);
     }
 }
 
