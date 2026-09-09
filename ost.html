@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="default.css">
+        <title>About ASC Adventures</title>
+        <script src="scripts/navbar.js" defer></script>
+        <script src="scripts/musicstuff.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html"><img src="ascadventures3cropped.png"></a></li>
+                <li><a href="about.html">About ASC Adventures</a></li>
+                <li><a href="crew.html">Meet the Crew</a></li>
+                <li class="selected">OST</li>
+            </ul>
+        </nav>
+        <main>
+            <div class="intro">
+                <h1>OST</h1>
+            </div>
+            <div id="poster-container">
+                <button class="change-ost" id="prev"><</button>
+                <div id="poster">
+                    <h2 id="round-title">ROUND 1</h2>
+                    <p id="track-name">Opening Ceremonies</p>
+                    <div id="roster">
+                        <img src="patapfps/narcissus.png" id="opponent">
+                        <p>VS</p>
+                        <img src="patapfps/gatito.png" id="player">
+                        <div id="support1">
+                            <img id="supporto1">
+                            <img id="supporto2">
+                            <img id="supporto3">
+                            <img id="supporto4">
+                            <img id="supporto5">
+                            <img id="supporto6">
+                            <img id="supporto7">
+                            <img id="supporto8">
+                            <img id="supporto9">
+                        </div>
+                        <div id="support2">
+                            <img id="supportp1">
+                            <img id="supportp2">
+                            <img id="supportp3">
+                            <img id="supportp4">
+                            <img id="supportp5">
+                            <img id="supportp6">
+                            <img id="supportp7">
+                            <img id="supportp8">
+                            <img id="supportp9">
+                        </div>
+                    </div>
+                </div>
+                <button class="change-ost" id="next">></button>
+            </div>
+
+            <section class="centered">
+                <div id="boombox">
+                <img src="boombox.png">
+                <p id="track-number">01</p>
+                <button class="implicit" id="play">Play</button>
+                <button class="implicit" id="pause">Pause</button>
+                <input type="range" id="seek-bar" value="0", min="0" max="100">
+            </div>
+            </section>
+        </main>
+        <script>
+            const music_info = [
+                {
+                    title: "Opening Ceremonies",
+                    opponent: "narcissus",
+                    player: "gatito",
+                    supporto: [],
+                    supportp: [],
+                    audiosrc: "starterplaceascmix.mp3"
+                },
+                {
+                    title: "A Look Around You",
+                    opponent: "narcissus",
+                    player: "gatito",
+                    supporto: ["dengen"],
+                    supportp: ["cherry"],
+                    audiosrc: "reasontodieasc2026mix.mp3"
+                },
+                {
+                    title: "ASC BEAST BRAWL",
+                    opponent: "narcissus",
+                    player: "gatito",
+                    supporto: ["nova", "melon", "squigly", "dengen", "mori", "pajra", "galefrostbane", "juno&maxx", "sonicfox"],
+                    supportp: ["elaine", "spinny", "cherry", "camel", "miju", "podsfi", "helper", "oreo", "feesh"],
+                    audiosrc: "afcbeastbrawlv2.mp3"
+                },
+                {
+                    title: "BLASPHEMY",
+                    opponent: "narcissus",
+                    player: "gatito",
+                    supporto: ["nova", "melon", "squigly", "dengen", "mori", "pajra", "galefrostbane", "juno&maxx", "sonicfox"],
+                    supportp: ["elaine", "spinny", "cherry", "camel", "miju", "podsfi", "helper", "oreo", "feesh"],
+                    audiosrc: "defeatasc2026mix.mp3"
+                },
+                {
+                    title: "JUDGEMENT DAY",
+                    opponent: "narcissus",
+                    player: "gatito",
+                    supporto: ["nova", "melon", "squigly", "dengen", "mori", "pajra", "galefrostbane", "juno&maxx", "sonicfox"],
+                    supportp: ["elaine", "spinny", "cherry", "camel", "miju", "podsfi", "helper", "oreo", "feesh"],
+                    audiosrc: "finaleascadventuresmix.mp3"
+                }
+            ];
+            
+            const roundTitle = document.getElementById("round-title");
+            const trackName = document.getElementById("track-name");
+            const opponentImg = document.getElementById("opponent");
+            const playerImg = document.getElementById("player");
+            const supportoImgs = document.querySelectorAll("#support1 img");
+            const supportpImgs = document.querySelectorAll("#support2 img");
+            const seekBar = document.getElementById("seek-bar");
+            const trackNumber = document.getElementById("track-number");
+            seekBar.value = 0;
+
+            var curAudio = new Audio("ost/" + music_info[0].audiosrc);
+            var musicIndex = 0;
+
+            function updateMusicInfo() {
+                const music = music_info[musicIndex];
+                roundTitle.textContent = `ROUND ${musicIndex + 1}`;
+                trackName.textContent = music.title;
+                opponentImg.src = `patapfps/${music.opponent}.png`;
+                playerImg.src = `patapfps/${music.player}.png`;
+                curAudio.src = `ost/${music.audiosrc}`;
+                trackNumber.textContent = musicIndex < 9 ? `0${musicIndex + 1}` : `${musicIndex + 1}`;
+                seekBar.value = 0;
+                supportoImgs.forEach((img, index) => {
+                    if (music.supporto[index]) {
+                        img.src = `patapfps/${music.supporto[index]}.png`;
+                        img.style.display = "inline";
+                    } else {
+                        img.style.display = "none";
+                    }
+                });
+
+                supportpImgs.forEach((img, index) => {
+                    if (music.supportp[index]) {
+                        img.src = `patapfps/${music.supportp[index]}.png`;
+                        img.style.display = "inline";
+                    } else {
+                        img.style.display = "none";
+                    }
+                });
+                
+            }
+
+            document.getElementById("prev").addEventListener("click", () => {
+                musicIndex = (musicIndex - 1 + music_info.length) % music_info.length;
+                updateMusicInfo();
+            });
+
+            document.getElementById("next").addEventListener("click", () => {
+                musicIndex = (musicIndex + 1) % music_info.length;
+                updateMusicInfo();
+            });
+
+            document.getElementById("play").addEventListener("click", () => {
+                curAudio.play();
+            });
+
+            document.getElementById("pause").addEventListener("click", () => {
+                curAudio.pause();
+            });
+
+            curAudio.addEventListener("timeupdate", () => {
+                seekBar.value = (curAudio.currentTime / curAudio.duration) * 100;
+            });
+
+            seekBar.addEventListener("input", () => {
+                curAudio.currentTime = (seekBar.value / 100) * curAudio.duration;
+            });
+        </script>
+    </body>
+</html>

@@ -291,6 +291,137 @@ article{
     right:0;
 }
 
+#poster-container {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.change-ost {
+    @include default-box;
+    font-size: 2vw;
+    padding: 20px;
+    margin: 20px;
+}
+
+#poster {
+    border: $white-smoke 6px solid;
+    background-color: $white-smoke;
+    width: 75%;
+    margin: 20px auto;
+    h2 {
+        color: $black;
+        font-family: serif;
+        text-align: center;
+        font-size: min(5vw, 96px);
+        margin: 20px auto;
+    }
+    p {
+        color: $black;
+        font-family: serif;
+        text-align: center;
+        font-size: min(2.5vw, 48px);
+        margin: 20px auto;
+    }
+    #roster{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: max-content 1fr;
+        grid-template-areas: 
+            "opponent vs player"
+            "support1 . support2";
+        place-items: center;
+        img {
+            max-width: min(100%, 400px);
+            height:auto;
+            margin: 10px;
+        }
+        p {
+            font-family: serif;
+            font-size: min(3vw, 48px);
+        }
+        #support1 {
+            grid-area: support1;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            img {
+                max-width: min(100%, 200px);
+                height:auto;
+                margin: 10px;
+            }
+        }
+        #support2 {
+            grid-area: support2;
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            img {
+                max-width: min(100%, 200px);
+                height:auto;
+                margin: 10px;
+            }
+        }
+    }
+}
+
+.centered {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boombox {
+    position:relative;
+    display:inline-block;
+    width:100%;
+    max-width: 750px;
+    text-align: center;
+    margin: 20px auto;
+    img {
+        display: block;
+        max-width: min(100%, 750px);
+        height:auto;
+        margin: 20px auto;
+        box-shadow: 0 20px 5px -5px rgba(255, 255, 255, 0.5);
+    }
+}
+
+.implicit {
+    position: absolute;
+    font-size: 15px;
+    color: $black;
+    opacity: 0.5;
+}
+
+#play {
+    top: 55%;
+    left: 59.5%;
+    transform: rotate(-10deg);
+}
+
+#pause {
+    font-size: 10px;
+    top: 56.5%;
+    left: 54.75%;
+    transform: rotate(-10deg);
+}
+
+#seek-bar {
+    position: absolute;
+    top: 75%;
+    left: 33%;
+    width: 33%;
+}
+
+#track-number {
+    font-family: "Digital 7", sans-serif;
+    position: absolute;
+    top: 37%;
+    left: 47.5%;
+    text-align: center;
+    font-size: 48px;
+    color: $black;
+}
+
 @media screen and (max-width: 768px){
     .intro {
         max-width: 90%;
