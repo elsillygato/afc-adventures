@@ -1,24 +1,4 @@
 const charinfo ={
-    taterazay: {
-        name: "Taterazay",
-        description: "Basic Sword Hero"
-    },
-    yarida: {
-        name: "Yarida",
-        description: "Basic Spear Hero"
-    },
-    yumiyacha: {
-        name: "Yumiyacha",
-        description: "Basic Bow Hero"
-    },
-    kibadda: {
-        name: "Kibadda",
-        description: "Basic Lance Hero"
-    },
-    destrobo: {
-        name: "Destrobo",
-        description: "Basic Arm Hero"
-    },
     lordgato: {
         name: "Lord Gato",
         description: "The hero of our story! A hat-wearing Yarida who's willing to fight for his friends and his worth."
@@ -49,6 +29,26 @@ const charinfo ={
     },
     feesh: {
         name: "Feesh",
+        description: "PLACEHOLDER TEXT"
+    },
+    helper: {
+        name: "Helper",
+        description: "PLACEHOLDER TEXT"
+    },
+    oreo: {
+        name: "Oreo",
+        description: "PLACEHOLDER TEXT"
+    },
+    nova: {
+        name: "Nova",
+        description: "PLACEHOLDER TEXT"
+    },
+    dengen: {
+        name: "Dengen",
+        description: "PLACEHOLDER TEXT"
+    },
+    mori: {
+        name: "Mori",
         description: "PLACEHOLDER TEXT"
     }
 };

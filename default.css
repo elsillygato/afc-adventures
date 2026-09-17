@@ -191,6 +191,21 @@ article h2 {
 #characterselect #feesh {
   filter: drop-shadow(0 0 0.25rem #fff);
 }
+#characterselect #helper {
+  filter: drop-shadow(0 0 0.25rem #fff);
+}
+#characterselect #oreo {
+  filter: drop-shadow(0 0 0.25rem yellow);
+}
+#characterselect #nova {
+  filter: drop-shadow(0 0 0.25rem #3e9eed);
+}
+#characterselect #dengen {
+  filter: drop-shadow(0 0 0.25rem #bf2b26);
+}
+#characterselect #mori {
+  filter: drop-shadow(0 0 0.25rem #2d1161);
+}
 
 #characterarea {
   display: flex;
