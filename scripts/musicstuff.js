@@ -14,7 +14,19 @@ const trackList = [
     {
         name: "Elevensweeper Version",
         source:"elevensweeper"
-    }
+    },
+    {
+        name: "Retro Version",
+        source:"retro"
+    },
+    {
+        name: "AFC Antics Version",
+        source:"afcantics"
+    },
+    {
+        name: "Sprunki Version",
+        source:"sprunki"
+    },
 ]
 
 
