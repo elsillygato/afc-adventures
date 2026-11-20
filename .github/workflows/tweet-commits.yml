@@ -38,9 +38,32 @@ jobs:
       - name: Tweet commits
         if: steps.commits.outputs.has_commits == 'true'
         uses: ethomson/send-tweet-action@v1
-        with:
-          status: ${{ steps.commits.outputs.tweet }}
-          consumer-key: ${{ secrets.TWITTER_API_KEY }}
-          consumer-secret: ${{ secrets.TWITTER_API_SECRET }}
-          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
-          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
+          TWEET_TEXT: ${{ steps.commits.outputs.tweet }}
+        run: |
+          pip install requests requests-oauthlib
+          python3 -c '
+          import os, sys, requests
+          from requests_oauthlib import OAuth1
+
+          auth = OAuth1(
+              os.environ["TWITTER_API_KEY"],
+              os.environ["TWITTER_API_SECRET"],
+              os.environ["TWITTER_ACCESS_TOKEN"],
+              os.environ["TWITTER_ACCESS_TOKEN_SECRET"]
+          )
+
+          response = requests.post(
+              "https://x.com",
+              auth=auth,
+              json={"text": os.environ["TWEET_TEXT"]}
+          )
+
+          print("Status:", response.status_code)
+          print("Response:", response.text)
+          if response.status_code not in (200, 201):
+              sys.exit(1)
