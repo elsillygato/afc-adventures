@@ -22,7 +22,7 @@ jobs:
             echo "has_commits=false" >> $GITHUB_OUTPUT
           else
             echo "has_commits=true" >> $GITHUB_OUTPUT
-            HEADER="Today's updates:"
+            HEADER="New stuff!"
             FULL_TEXT=$(printf "%s\n\n%s" "$HEADER" "$COMMITS")
             TRIMMED_TEXT=$(python3 -c 'import sys; text = sys.stdin.read().strip(); print(text if len(text) <= 280 else text[:277] + "...")' <<< "$FULL_TEXT")
             {
