@@ -67,3 +67,4 @@ jobs:
           print("Response:", response.text)
           if response.status_code not in (200, 201):
               sys.exit(1)
+          EOF
