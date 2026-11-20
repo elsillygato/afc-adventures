@@ -1,0 +1,46 @@
+name: Tweets all commits made in a day (if there are any)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  daily-tweet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+
+      - name: Gather commits
+        id: commits
+        run: |
+          COMMITS=$(git log --since="24 hours ago" --no-merges --pretty=format:"• %s")
+          
+          if [ -z "$COMMITS" ]; then
+            echo "has_commits=false" >> $GITHUB_OUTPUT
+          else
+            echo "has_commits=true" >> $GITHUB_OUTPUT
+            
+            HEADER="Today's updates:"
+            FULL_TEXT=$(printf "%s\n\n%s" "$HEADER" "$COMMITS")
+            TRIMMED_TEXT=$(python3 -c 'import sys; text = sys.stdin.read().strip(); print(text if len(text) <= 280 else text[:277] + "...")' <<< "$FULL_TEXT")
+            
+            {
+              echo 'tweet<<EOF'
+              echo "$TRIMMED_TEXT"
+              echo 'EOF'
+            } >> $GITHUB_OUTPUT
+          fi
+
+      - name: Tweet commits
+        if: steps.commits.outputs.has_commits == 'true'
+        uses: ethomson/send-tweet-action@v1
+        with:
+          status: ${{ steps.commits.outputs.tweet }}
+          consumer-key: ${{ secrets.TWITTER_API_KEY }}
+          consumer-secret: ${{ secrets.TWITTER_API_SECRET }}
+          access-token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          access-token-secret: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
