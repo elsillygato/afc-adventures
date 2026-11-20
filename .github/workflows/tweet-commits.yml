@@ -1,4 +1,4 @@
-name: Tweets all commits made in a day (if there are any)
+name: Daily Commit Summary Tweet
 
 on:
   schedule:
@@ -14,20 +14,17 @@ jobs:
         with:
           fetch-depth: 50
 
-      - name: Gather commits
+      - name: Get commits
         id: commits
         run: |
           COMMITS=$(git log --since="24 hours ago" --no-merges --pretty=format:"• %s")
-          
           if [ -z "$COMMITS" ]; then
             echo "has_commits=false" >> $GITHUB_OUTPUT
           else
             echo "has_commits=true" >> $GITHUB_OUTPUT
-            
             HEADER="Today's updates:"
             FULL_TEXT=$(printf "%s\n\n%s" "$HEADER" "$COMMITS")
             TRIMMED_TEXT=$(python3 -c 'import sys; text = sys.stdin.read().strip(); print(text if len(text) <= 280 else text[:277] + "...")' <<< "$FULL_TEXT")
-            
             {
               echo 'tweet<<EOF'
               echo "$TRIMMED_TEXT"
@@ -37,7 +34,6 @@ jobs:
 
       - name: Tweet commits
         if: steps.commits.outputs.has_commits == 'true'
-        uses: ethomson/send-tweet-action@v1
         env:
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
@@ -46,7 +42,7 @@ jobs:
           TWEET_TEXT: ${{ steps.commits.outputs.tweet }}
         run: |
           pip install requests requests-oauthlib
-          python3 -c '
+          python3 - << 'EOF'
           import os, sys, requests
           from requests_oauthlib import OAuth1
 
@@ -58,7 +54,7 @@ jobs:
           )
 
           response = requests.post(
-              "https://x.com",
+              "https://api.x.com/2/tweets",
               auth=auth,
               json={"text": os.environ["TWEET_TEXT"]}
           )
